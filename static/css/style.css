@@ -1,0 +1,21 @@
+h1{
+    font-size:100px;
+    color: lightblue;
+    text-align: center;
+}
+
+.menu ul{
+    display:flex;
+    justify-content: center;
+    list-style: none;
+}
+
+.menu li a{
+    text-decoration: none;
+}
+
+.menu a p{
+    font-size: 20px;
+    margin-left: 60px;
+    color: green;
+}

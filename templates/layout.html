@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ status }}</title>
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/style.css') }}">
+</head>
+<body>
+    <div class="menu">
+        <ul>
+            <li><a href="{{ url_for('index') }}"><p>Главная</p></a></li>
+            <li><a href="{{ url_for('admin.admin_login') }}"><p>Админка</p></a></li>
+            <li><a href="#"><p>Блог</p></a></li>
+            <li><a href="#"><p>Контакты</p></a></li>
+        </ul>
+    </div>
+    <h1>{{ status }}</h1>
+</body>
+</html>
