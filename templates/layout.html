@@ -4,16 +4,27 @@
     <meta charset="UTF-8">
     <title>{{ status }}</title>
     <link rel="stylesheet" href="{{ url_for('static',filename='css/style.css') }}">
+    {% block add_styles %}
+    <!--В этом классе, переопределяются стили в дочерних шаблонах (например в contacts/static/css/style.css)-->
+    {% endblock add_styles %}
 </head>
 <body>
-    <div class="menu">
-        <ul>
-            <li><a href="{{ url_for('index') }}"><p>Главная</p></a></li>
-            <li><a href="{{ url_for('admin.admin_login') }}"><p>Админка</p></a></li>
-            <li><a href="#"><p>Блог</p></a></li>
-            <li><a href="#"><p>Контакты</p></a></li>
-        </ul>
-    </div>
-    <h1>{{ status }}</h1>
+<div class="menu">
+    <ul>
+        <li><a href="{{ url_for('index') }}"><p>Главная</p></a></li>
+        {% if blue_prints.admin %}
+        <li><a href="{{ url_for('admin.admin_login') }}"><p>Админка</p></a></li>
+        {% endif %}
+        {% if blue_prints.blog %}
+        <li><a href="{{ url_for('blog.blog_read') }}"><p>Блог</p></a></li>
+        {% endif %}
+        {% if blue_prints.contacts %}
+        <li><a href="{{ url_for('contacts.contacts_read') }}"><p>Контакты</p></a></li>
+        {% endif %}
+    </ul>
+</div>
+<h1>{{ status }}</h1>
+{% block content %}
+{% endblock content %}
 </body>
 </html>
